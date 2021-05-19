@@ -15,6 +15,9 @@
 		DF8F9B972654FD8300C1718C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8F9B952654FD8300C1718C /* LaunchScreen.storyboard */; };
 		DF8F9BA22654FD8300C1718C /* NameItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8F9BA12654FD8300C1718C /* NameItTests.swift */; };
 		DF8F9BAD2654FD8300C1718C /* NameItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8F9BAC2654FD8300C1718C /* NameItUITests.swift */; };
+		DF8F9BBE2654FD8C00C1718C /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DF8F9BBD2654FD8C00C1718C /* GoogLeNetPlaces.mlmodel */; };
+		DF8F9BC82655316800C1718C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8F9BC72655316800C1718C /* HelpViewController.swift */; };
+		DF8F9BD026553D9E00C1718C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8F9BCF26553D9E00C1718C /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		DF8F9BA82654FD8300C1718C /* NameItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NameItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8F9BAC2654FD8300C1718C /* NameItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameItUITests.swift; sourceTree = "<group>"; };
 		DF8F9BAE2654FD8300C1718C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF8F9BBD2654FD8C00C1718C /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = GoogLeNetPlaces.mlmodel; path = ../../GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
+		DF8F9BC72655316800C1718C /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		DF8F9BCF26553D9E00C1718C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,16 @@
 		DF8F9B892654FD8000C1718C /* NameIt */ = {
 			isa = PBXGroup;
 			children = (
+				DF8F9BBD2654FD8C00C1718C /* GoogLeNetPlaces.mlmodel */,
 				DF8F9B8A2654FD8000C1718C /* AppDelegate.swift */,
 				DF8F9B8C2654FD8000C1718C /* SceneDelegate.swift */,
 				DF8F9B8E2654FD8000C1718C /* ViewController.swift */,
 				DF8F9B902654FD8000C1718C /* Main.storyboard */,
+				DF8F9BCF26553D9E00C1718C /* Extensions.swift */,
 				DF8F9B932654FD8300C1718C /* Assets.xcassets */,
 				DF8F9B952654FD8300C1718C /* LaunchScreen.storyboard */,
 				DF8F9B982654FD8300C1718C /* Info.plist */,
+				DF8F9BC72655316800C1718C /* HelpViewController.swift */,
 			);
 			path = NameIt;
 			sourceTree = "<group>";
@@ -258,9 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF8F9BC82655316800C1718C /* HelpViewController.swift in Sources */,
 				DF8F9B8F2654FD8000C1718C /* ViewController.swift in Sources */,
 				DF8F9B8B2654FD8000C1718C /* AppDelegate.swift in Sources */,
 				DF8F9B8D2654FD8000C1718C /* SceneDelegate.swift in Sources */,
+				DF8F9BBE2654FD8C00C1718C /* GoogLeNetPlaces.mlmodel in Sources */,
+				DF8F9BD026553D9E00C1718C /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5JL2VP7KUJ;
 				INFOPLIST_FILE = NameIt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5JL2VP7KUJ;
 				INFOPLIST_FILE = NameIt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
