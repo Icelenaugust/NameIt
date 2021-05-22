@@ -19,12 +19,24 @@ class ViewController: UIViewController,
     
     @IBOutlet weak var selectImage: UIButton!
     
+    @IBOutlet weak var takePhotoButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func takePhoto(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
+    
+    
+    
     
     @IBAction func chooseImage(_ sender: Any) {
         let picker = UIImagePickerController()
@@ -67,6 +79,7 @@ class ViewController: UIViewController,
         frontImage.image = frontPicture
         analyzeImage(image: frontPicture)
         picker.dismiss(animated: true, completion: nil)
+        
     }
     
 }

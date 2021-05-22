@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,7 +38,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backColour" translatesAutoresizingMaskIntoConstraints="NO" id="NhP-gv-Hx9">
-                                <rect key="frame" x="38" y="168" width="338" height="403.5"/>
+                                <rect key="frame" x="38" y="168" width="338" height="354.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izI-rb-W6y">
                                 <rect key="frame" x="119.5" y="621.5" width="175" height="54"/>
@@ -52,19 +53,32 @@
                                     <action selector="chooseImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Me-MW-Bgv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvL-X4-xQv">
+                                <rect key="frame" x="119.5" y="552.5" width="175" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="FuE-57-tDZ"/>
+                                    <constraint firstAttribute="height" constant="54" id="Roo-Tb-rVn"/>
+                                </constraints>
+                                <state key="normal" image="takePhotoButton"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dsp-3M-yt0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.91462182999999997" green="0.90440398450000004" blue="0.94548124069999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r27-mR-l49" secondAttribute="bottom" constant="100" id="3zw-Zr-8tc"/>
-                            <constraint firstItem="izI-rb-W6y" firstAttribute="top" secondItem="NhP-gv-Hx9" secondAttribute="bottom" constant="50" id="8tb-mj-FjN"/>
                             <constraint firstItem="r27-mR-l49" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9pz-B2-Psc"/>
                             <constraint firstItem="izI-rb-W6y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EEA-Ul-acr"/>
+                            <constraint firstItem="izI-rb-W6y" firstAttribute="top" secondItem="OvL-X4-xQv" secondAttribute="bottom" constant="15" id="JTD-ef-WWj"/>
                             <constraint firstItem="r27-mR-l49" firstAttribute="top" secondItem="izI-rb-W6y" secondAttribute="bottom" constant="51.5" id="NGO-rt-kVM"/>
                             <constraint firstItem="NhP-gv-Hx9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="cBS-Oj-Xmt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NhP-gv-Hx9" secondAttribute="trailing" constant="38" id="cTd-Fq-usz"/>
                             <constraint firstItem="NhP-gv-Hx9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="cf9-Or-Hog"/>
+                            <constraint firstItem="OvL-X4-xQv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tRj-xv-fog"/>
                             <constraint firstItem="NhP-gv-Hx9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tcD-Fy-fBK"/>
+                            <constraint firstItem="OvL-X4-xQv" firstAttribute="top" secondItem="NhP-gv-Hx9" secondAttribute="bottom" constant="30" id="v7V-IR-H21"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Name It" id="Pn0-hM-DFb"/>
@@ -72,44 +86,73 @@
                         <outlet property="frontImage" destination="NhP-gv-Hx9" id="zdp-33-IdW"/>
                         <outlet property="objectName" destination="oC6-5g-NDX" id="Pgu-RD-AjB"/>
                         <outlet property="selectImage" destination="izI-rb-W6y" id="vpe-AW-Qnq"/>
+                        <outlet property="takePhotoButton" destination="OvL-X4-xQv" id="oQn-qM-Xbc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="886.95652173913049" y="63.616071428571423"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="o7k-wO-16h">
+        <!--Camera View Controller-->
+        <scene sceneID="ZQe-kh-AJs">
             <objects>
-                <viewController id="X61-An-2qe" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1pS-kQ-0ue">
+                <viewController id="iDE-w1-rmL" customClass="CameraViewController" customModule="NameIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gfj-Fp-eFw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app is purely for fun. Please do not take it too seriously!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCP-Ld-HbH">
-                                <rect key="frame" x="35" y="421" width="344" height="54.5"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
-                                <color key="textColor" red="0.44398581980000001" green="0.33316391709999998" blue="0.3995289803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" red="0.84520268440000001" green="0.65114802120000004" blue="0.52642321589999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBn-6B-ijt">
+                                <rect key="frame" x="0.0" y="44" width="414" height="552"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xBn-6B-ijt" secondAttribute="height" multiplier="3:4" id="aNg-vS-bYq"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mj6-Dd-sTd">
+                                <rect key="frame" x="131" y="636" width="152" height="152"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="152" id="lvV-6M-jQ8"/>
+                                    <constraint firstAttribute="width" constant="152" id="qnd-dy-oq0"/>
+                                </constraints>
+                                <state key="normal" image="cameraButton"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="iDE-w1-rmL" eventType="touchUpInside" id="nMU-93-I6s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qw-92-FNF">
+                                <rect key="frame" x="355" y="692.5" width="39" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="cbe-3O-3iN"/>
+                                    <constraint firstAttribute="width" constant="39" id="eS8-Bi-T3v"/>
+                                </constraints>
+                                <state key="normal" image="switchCamera"/>
+                                <connections>
+                                    <action selector="switchCamera:" destination="iDE-w1-rmL" eventType="touchUpInside" id="t0p-XS-Wl2"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="eyI-7V-0Qp"/>
-                        <color key="backgroundColor" red="0.92494255299999995" green="0.918195188" blue="0.95231693979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="SUa-eC-Efv"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YCP-Ld-HbH" firstAttribute="centerX" secondItem="1pS-kQ-0ue" secondAttribute="centerX" id="4gJ-8x-e5H"/>
-                            <constraint firstItem="YCP-Ld-HbH" firstAttribute="centerY" secondItem="1pS-kQ-0ue" secondAttribute="centerY" id="6RU-0Z-3lX"/>
-                            <constraint firstItem="YCP-Ld-HbH" firstAttribute="leading" secondItem="eyI-7V-0Qp" secondAttribute="leading" constant="35" id="GDP-Y0-42b"/>
-                            <constraint firstItem="eyI-7V-0Qp" firstAttribute="trailing" secondItem="YCP-Ld-HbH" secondAttribute="trailing" constant="35" id="YCE-zl-t9m"/>
+                            <constraint firstItem="mj6-Dd-sTd" firstAttribute="centerX" secondItem="Gfj-Fp-eFw" secondAttribute="centerX" id="4Hn-ZF-v0C"/>
+                            <constraint firstItem="xBn-6B-ijt" firstAttribute="top" secondItem="SUa-eC-Efv" secondAttribute="top" id="DTW-gG-Wfn"/>
+                            <constraint firstItem="xBn-6B-ijt" firstAttribute="leading" secondItem="SUa-eC-Efv" secondAttribute="leading" id="ESw-U1-hgZ"/>
+                            <constraint firstItem="mj6-Dd-sTd" firstAttribute="top" secondItem="xBn-6B-ijt" secondAttribute="bottom" constant="40" id="Wa1-Uq-sKH"/>
+                            <constraint firstItem="SUa-eC-Efv" firstAttribute="trailing" secondItem="xBn-6B-ijt" secondAttribute="trailing" id="aG6-p9-xmu"/>
+                            <constraint firstItem="SUa-eC-Efv" firstAttribute="trailing" secondItem="9Qw-92-FNF" secondAttribute="trailing" constant="20" id="dhg-Rs-Gjh"/>
+                            <constraint firstItem="9Qw-92-FNF" firstAttribute="centerY" secondItem="mj6-Dd-sTd" secondAttribute="centerY" id="o0U-62-Zel"/>
                         </constraints>
-                        <connections>
-                            <outlet property="help" destination="YCP-Ld-HbH" id="bep-PS-1IK"/>
-                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="5h1-T0-rYt"/>
+                    <navigationItem key="navigationItem" id="DaV-rB-Bs5"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="mj6-Dd-sTd" id="vBH-Cj-Oe2"/>
+                        <outlet property="cameraSwitch" destination="9Qw-92-FNF" id="Xmx-Aq-LW1"/>
+                        <outlet property="cameraView" destination="xBn-6B-ijt" id="kvD-nc-ifa"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9R5-X0-10S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o6y-tZ-3fN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847.826086956522" y="70.982142857142847"/>
+            <point key="canvasLocation" x="1208.6956521739132" y="802.90178571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ntw-OZ-P87">
@@ -132,6 +175,12 @@
     </scenes>
     <resources>
         <image name="backColour" width="300" height="300"/>
+        <image name="cameraButton" width="200" height="200"/>
         <image name="selectButton" width="222" height="58"/>
+        <image name="switchCamera" width="200" height="200"/>
+        <image name="takePhotoButton" width="222" height="58"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
